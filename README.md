@@ -37,19 +37,85 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+i)FULL ADDER
+
+<img width="781" alt="Screenshot 2024-11-29 at 7 45 10 PM" src="https://github.com/user-attachments/assets/37c65e89-80b6-4edd-82d8-ae786043fdb8">
+
+ii)FULL SUBTRACTOR
+
+<img width="787" alt="Screenshot 2024-11-29 at 7 48 00 PM" src="https://github.com/user-attachments/assets/ee87a839-25cd-40b1-ae8e-7b702da30d28">
 
 **Procedure**
 
-Write the detailed procedure here
+
+1.	Type the program in Quartus software.
+
+2.	Compile and run the program.
+
+3.	Generate the RTL schematic and save the logic diagram.
+
+4.	Create nodes for inputs and outputs to generate the timing diagram.
+
+5.	For different input combinations generate the timing diagram.
 
 **Program:**
+i)FULL ADDER
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+```
+module fa(a,b,cin,sum,carry);
+
+input a,b,cin;
+
+output sum,carry;
+
+assign sum=( (a ^ b)^cin);
+
+assign carry= ( (a & b)| ( cin &(a ^ b )));
+
+endmodule
+
+ii)FULL SUBTRACTOR
+
+module fs(a,b,bin,difference,borrow);
+
+input a,b,bin;
+
+output difference,borrow;
+
+assign difference= ( (a ^ b)^bin);
+
+assign borrow= ( ( ~a & b)| ( bin & (~(a ^ b ))));
+
+endmodule
+
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+
+Developed by: Prathik T.S
+
+RegisterNumber: 24000205
+
 */
-
+```
 **RTL Schematic**
 
+FULL ADDER
+
+<img width="1470" alt="Screenshot 2024-11-29 at 7 20 00 PM" src="https://github.com/user-attachments/assets/cf94ce51-daf9-4af6-9ec2-12e1169b4c08">
+
+FULL SUBTRACTOR
+
+<img width="1458" alt="Screenshot 2024-11-29 at 7 01 43 PM" src="https://github.com/user-attachments/assets/7e654765-a97e-4c98-881a-9d9891e22edc">
+
 **Output Timing Waveform**
+
+FULL ADDER
+
+<img width="1465" alt="Screenshot 2024-11-29 at 11 18 15 PM" src="https://github.com/user-attachments/assets/232381c5-5ec5-4d3e-9ac5-8f8d6d8f61a0">
+
+FULL SUBTRACTOR
+
+<img width="1467" alt="Screenshot 2024-11-29 at 11 23 01 PM" src="https://github.com/user-attachments/assets/bb69b2c2-2dce-427e-95c6-26c9cd7c9130">
+
 
 **Result:**
 
